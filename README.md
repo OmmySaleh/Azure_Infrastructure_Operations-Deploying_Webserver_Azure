@@ -33,10 +33,7 @@ For this project, I will write a Packer template and a Terraform template to dep
 - We then need to get the service principal for our server json template, which we can get them from the Environment Details of our Udacity Cloud Lab and then we run the sever json template which will use Packer to build and create the server image. We will use an Ubuntu 18.04-LTS SKU as our base image, we will ensure the requirements in our provisioners and also making sure that the resource group specified in packer for the image is the same image specified in Terraform.
 - Then we run the following command to build our image; "To build the image we use "packer build server.json".
 
-![PlanSaved](https://user-images.githubusercontent.com/110615576/182968609-b79c28ef-0291-4da8-9ca7-6049c0aaa87b.png)
-
 ![MyPackerImage](https://user-images.githubusercontent.com/110615576/182968755-f9f06eeb-e815-4a32-bfb5-9bf9381ac551.png)
-
 
 
 3. Creating the Infrastructure.
@@ -45,10 +42,9 @@ For this project, I will write a Packer template and a Terraform template to dep
 - We then create a Virtual network and a subnet on that Virtual netwwork, then we create a Network Security Group that will allow access to other VMs on the subnet and deny direct access from the internet, then we create a Network Interface followed by a Public IP and a Load Balancer then we create a virtual machine availability set along with virtual machines we also create managed disks for our virtual machines
 - We have to ensure that variables file allows for customers to configure the number of virtual machines and the deployment at a minimum.
 
-![PackerBuild](https://user-images.githubusercontent.com/110615576/182968826-dc961384-e418-4ddf-8340-38fef5bee386.png)
+![PlanSaved](https://user-images.githubusercontent.com/110615576/182970785-69b54bf8-452c-49ae-8ca0-f1b0cee296e5.png)
 
 ![Resources](https://user-images.githubusercontent.com/110615576/182968914-95c8dfc2-eb77-4c4e-bcf0-7c3dd8dcda6c.png)
-
 
 
 4. Deploying our Infrastructure
@@ -56,6 +52,9 @@ For this project, I will write a Packer template and a Terraform template to dep
 - We will run the packer build command on our Packer template this will create our packer image.
 - We will then run the terraform plan -out <filename> in our project the file name is solution.plan this will enable us to view the resources that will be created and save the plan file to disc.  
 - Lastly we deploy our Terraform infrastructure and once we are done with the deployment we destroy it using the terraform destroy command.
+
+![PackerBuild](https://user-images.githubusercontent.com/110615576/182970855-c217d098-a125-4958-8629-94eb9183eda9.png)
+
  
  
 ### Output
