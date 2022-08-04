@@ -30,12 +30,7 @@ For this project, I will write a Packer template and a Terraform template to dep
 2. Creating a Server Image
 - Firstly, we will have to use Packer to create a server image. Packer is an open source tool for creating identical machine images for multiple platforms from a single source configuration. Here we have to ensure that the provided application is included in the template.
 - Then we create a resource group but for this particular project the resource group was already been created for us by Udacity Cloud Lab as "Azuredevops".
-- We then need to get ![PolicyList](https://user-images.githubusercontent.com/110615576/182965454-4e1617ad-a875-4486-9bf0-7df7b9dcbad5.png)![PlanSaved](https://user-images.githubusercontent.com/110615576/182965699-40c0fa82-938c-45f7-89d0-6575f92aac1b.png)
-![Resources](https://user-images.githubusercontent.com/110615576/182965829-5ab92f4d-e34f-4bed-90fc-0e692354c1b7.png)
-![MyPackerImage](https://user-images.githubusercontent.com/110615576/182966069-a251ee68-d677-4b99-ba70-a1906dd908e8.png)
-![PackerBuild](https://user-images.githubusercontent.com/110615576/182966135-88e32fb9-13f7-42be-8cae-bb4c72983375.png)
-![TaggingPolicy](https://user-images.githubusercontent.com/110615576/182966229-61594aa3-ee16-4504-aa3f-209a5f4d7fad.png)
-, which we can get them from the Environment Details of our Udacity Cloud Lab and then we run the sever json template which will use Packer to build and create the server image. We will use an Ubuntu 18.04-LTS SKU as our base image, we will ensure the requirements in our provisioners and also making sure that the resource group specified in packer for the image is the same image specified in Terraform.
+- We then need to get the service principal for our server json template, which we can get them from the Environment Details of our Udacity Cloud Lab and then we run the sever json template which will use Packer to build and create the server image. We will use an Ubuntu 18.04-LTS SKU as our base image, we will ensure the requirements in our provisioners and also making sure that the resource group specified in packer for the image is the same image specified in Terraform.
 - Then we run the following command to build our image; "To build the image we use "packer build server.json".
 
 ![PlanSaved](https://user-images.githubusercontent.com/110615576/182968609-b79c28ef-0291-4da8-9ca7-6049c0aaa87b.png)
