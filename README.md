@@ -27,6 +27,8 @@ For this project, I will write a Packer template and a Terraform template to dep
 
 ![PolicyList](https://user-images.githubusercontent.com/110615576/182968388-5b8f1e3e-ce6f-42bb-9b2e-555d45d8e593.png)
 
+
+
 2. Creating a Server Image
 - Firstly, we will have to use Packer to create a server image. Packer is an open source tool for creating identical machine images for multiple platforms from a single source configuration. Here we have to ensure that the provided application is included in the template.
 - Then we create a resource group but for this particular project the resource group was already been created for us by Udacity Cloud Lab as "Azuredevops".
@@ -34,6 +36,7 @@ For this project, I will write a Packer template and a Terraform template to dep
 - Then we run the following command to build our image; "To build the image we use "packer build server.json".
 
 ![MyPackerImage](https://user-images.githubusercontent.com/110615576/182968755-f9f06eeb-e815-4a32-bfb5-9bf9381ac551.png)
+
 
 
 3. Creating the Infrastructure.
@@ -45,6 +48,7 @@ For this project, I will write a Packer template and a Terraform template to dep
 ![PlanSaved](https://user-images.githubusercontent.com/110615576/182970785-69b54bf8-452c-49ae-8ca0-f1b0cee296e5.png)
 
 ![Resources](https://user-images.githubusercontent.com/110615576/182968914-95c8dfc2-eb77-4c4e-bcf0-7c3dd8dcda6c.png)
+
 
 
 4. Deploying our Infrastructure
