@@ -1,4 +1,4 @@
-# Configure the Microsoft Azure Provider
+# I start by Configuring the Microsoft Azure Provider
 provider "azurerm" {
   subscription_id = "314b2ee1-8ec9-4fc6-b550-d30f2ce5565d"
   client_id       = "f2b2fcb3-44de-4487-a382-726596739d34"
@@ -8,7 +8,7 @@ provider "azurerm" {
   features {}
 }
 
-# Locate the existing resource group
+# Then I will locate the existing resource group 
 data "azurerm_resource_group" "main" {
   name = "Azuredevops"
 }
@@ -17,7 +17,7 @@ output "id" {
   value = data.azurerm_resource_group.main.id
 }
 
-# Locate the existing custom image
+# There after I will locate my packer image
 data "azurerm_image" "main" {
   name                = "myPackerImage"
   resource_group_name = "Azuredevops"
@@ -27,7 +27,7 @@ output "image_id" {
   value = "/subscriptions/314b2ee1-8ec9-4fc6-b550-d30f2ce5565d/resourceGroups/RG-EASTUS-SPT-PLATFORM/providers/Microsoft.Compute/images/myPackerImage"
 }
 
-# Create a Network Security Group with some rules
+# Then I then Create a Network Security Group 
 resource "azurerm_network_security_group" "main" {
   name                = "my-SG"
   location            = data.azurerm_resource_group.main.location
@@ -46,7 +46,7 @@ resource "azurerm_network_security_group" "main" {
   }
 }
 
-# Create virtual network
+# I then create a virtual network
 resource "azurerm_virtual_network" "main" {
   name                = "my-network"
   address_space       = ["10.0.0.0/16"]
@@ -54,7 +54,7 @@ resource "azurerm_virtual_network" "main" {
   resource_group_name = data.azurerm_resource_group.main.name
 }
 
-# Create subnet
+# Then I Create subnet on the virtual network
 resource "azurerm_subnet" "main" {
   name                 = "my-subnet"
   resource_group_name  = data.azurerm_resource_group.main.name
@@ -88,7 +88,7 @@ resource "azurerm_network_interface" "main" {
   }
 }
 
-# Create a new Virtual Machine based on the custom Image
+# Then I will create a new Virtual Machine based on my built Image
 resource "azurerm_virtual_machine" "myVM2" {
   name                             = "myVM2"
   location                         = data.azurerm_resource_group.main.location
