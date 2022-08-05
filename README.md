@@ -23,7 +23,6 @@ For this project, I will write a Packer template and a Terraform template to dep
 - After writting our policy definition we then create an assignment for our policy and apply the policy definition to our subscription with the name "tagging-policy".
 - In order to verify that our policy has been correclty deployed and applied we run "az policy assignment list" on our CLI.
 
-![TaggingPolicy](https://user-images.githubusercontent.com/110615576/182968208-bb98944f-37f0-49c8-bd8e-944ed9c3fa05.png)
 
 ![PolicyList](https://user-images.githubusercontent.com/110615576/182968388-5b8f1e3e-ce6f-42bb-9b2e-555d45d8e593.png)
 
